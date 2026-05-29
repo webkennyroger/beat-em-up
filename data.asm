@@ -23,10 +23,6 @@ BG2_pal:
 .incbin "assets/backgrounds/stage1/stage1_bg2.pal"
 BG2_pal_end:
 
-BG2_map:
-.incbin "assets/backgrounds/stage1/stage1_bg2.map"
-BG2_map_end:
-
 HUD_tiles:
 .incbin "assets/hud/hud.pic"
 HUD_tiles_end:
@@ -46,6 +42,15 @@ guy_palette_end:
 guy_idle_tiles:
 .incbin "assets/build/sprites/guy/idle/guy_idle.pic"
 guy_idle_tiles_end:
+
+.ends
+
+; BG2_map moved to its own section to keep rodata1 under 32KB
+.section ".rodata1b" superfree
+
+BG2_map:
+.incbin "assets/backgrounds/stage1/stage1_bg2.map"
+BG2_map_end:
 
 .ends
 
